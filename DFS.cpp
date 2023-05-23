@@ -28,14 +28,18 @@ void dfs(vector<vector<int>>& adj , int start){
 }
 int main()
 {
-    vector<vector<int>> adj ={
-        {3,2,1},  // vertex 0 has neighbors 1 and 2  
-        {},// vertex 1 has neighbors 0, 3, and 4  
-        {4},// vertex 2 has neighbors 0 and 4  
-        {},  // vertex 3 has neighbors 1 and 4  
-        {}
-        
-    };
+    int n;
+    cin>>n;
+    vector<vector<int>> adj;
+    for(int i=0;i<n;i++){
+        int m;
+        cin>>m;
+        vector<int> arr(m);
+        for(int i=0;i<m;i++){
+            cin>>arr[i];
+        }
+        adj.push_back(arr);
+    }
     dfs(adj,0);
     return 0;
 }
